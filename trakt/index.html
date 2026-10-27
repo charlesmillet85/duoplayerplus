@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Duo Player Plus</title>
+<style>
+  :root { color-scheme: dark; }
+  body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #0c1424; color: #eef4ff;
+         font: 17px/1.4 -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif; text-align: center; padding: 16px; box-sizing: border-box; }
+  a { display: inline-block; margin-top: 16px; padding: 12px 22px; border-radius: 999px; background: #a9cbff; color: #0c1424; text-decoration: none; font-weight: 600; }
+</style>
+</head>
+<body>
+<main>
+  <p>Returning to Duo Player Plus…</p>
+  <a id="back" href="duoplayerplus://trakt">Open Duo Player Plus</a>
+</main>
+<script>
+  // Trakt sends its answer here; it goes straight back to the app. Nothing is stored or sent anywhere else.
+  var target = "duoplayerplus://trakt" + location.search;
+  document.getElementById("back").href = target;
+  location.replace(target);
+</script>
+</body>
+</html>
