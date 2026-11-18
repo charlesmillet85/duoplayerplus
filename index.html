@@ -1,17 +1,77 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Folio Player Plus</title>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Folio Player Plus</title>
+<meta name="description" content="Your entire video library in one app. Plex, Jellyfin, Emby, SMB, WebDAV and your own files, together, with posters, cast and ratings.">
+<link rel="icon" href="icon.png">
 <style>
-:root{color-scheme:light dark;--bg:#fff;--fg:#1d1d1f;--mut:#5b6472;--ac:#2f6fe4;--card:#f3f5f9}
-@media (prefers-color-scheme:dark){:root{--bg:#0c1424;--fg:#eef4ff;--mut:#9fb0cc;--ac:#a9cbff;--card:#16233b}}
-body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.55 -apple-system,BlinkMacSystemFont,"Helvetica Neue",sans-serif}
-main{max-width:680px;margin:0 auto;padding:8vh 20px 10vh}
-h1{font-size:2rem;margin:0 0 .3em}h2{font-size:1.2rem;margin:1.8em 0 .4em}p,li{color:var(--fg)}.mut{color:var(--mut)}
-a{color:var(--ac)}ul{padding-left:1.2em}.card{background:var(--card);border-radius:16px;padding:14px 18px;margin:12px 0}
-nav a{margin-right:16px}
-</style></head><body><main>
-<nav><a href="./">Folio Player Plus</a><a href="support.html">Support</a><a href="privacy.html">Privacy</a></nav>
-<h1>Folio Player Plus</h1>
-<p class="mut">The video player made for the iPhone Duo. It also works on every other iPhone and iPad.</p>
-<p>Play MKV, MP4, M4V and MOV files with HDR10, HLG and Dolby Vision. Browse your own files, folders, SMB shares and links for free, and try every feature free for 14 days. Plus adds Plex, Jellyfin, Emby, WebDAV, SFTP, FTP and DLNA servers, offline downloads, Trakt and iCloud sync with one purchase and no subscription.</p>
+:root{color-scheme:light dark;--bg:#fbfbfd;--fg:#1d1d1f;--mut:#5b6472;--ac:#e8870c;--card:#fff;--line:#e6e8ee;--chip:#f0f2f6}
+@media (prefers-color-scheme:dark){:root{--bg:#0b0d14;--fg:#f4f5f8;--mut:#a3abbb;--ac:#f5a23c;--card:#141824;--line:#232a3a;--chip:#1b2132}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.55 -apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--ac);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:960px;margin:0 auto;padding:0 24px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+nav b{font-weight:650}nav div a{margin-left:22px;color:var(--mut);font-size:.95rem}
+.hero{text-align:center;padding:56px 0 40px}
+.hero img{width:132px;height:132px;border-radius:30px;box-shadow:0 18px 50px rgba(0,0,0,.18)}
+h1{font-size:clamp(2.2rem,6vw,3.6rem);line-height:1.05;letter-spacing:-.03em;margin:34px auto 0;max-width:15em;font-weight:720}
+.lead{font-size:clamp(1.05rem,2.4vw,1.3rem);color:var(--mut);max-width:34em;margin:20px auto 0}
+.btn{display:inline-block;margin-top:32px;background:var(--fg);color:var(--bg);padding:13px 26px;border-radius:999px;font-weight:600}
+.btn:hover{text-decoration:none;opacity:.88}
+.sources{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:44px auto 0;max-width:720px}
+.sources span{background:var(--chip);border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-size:.95rem;font-weight:550}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;padding:56px 0 24px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:26px}
+.card h3{margin:0 0 8px;font-size:1.15rem;letter-spacing:-.01em}
+.card p{margin:0;color:var(--mut);font-size:.98rem}
+.band{text-align:center;padding:56px 0 24px}
+.band h2{font-size:clamp(1.7rem,4.4vw,2.5rem);letter-spacing:-.025em;line-height:1.1;margin:0 auto;max-width:18em}
+.band p{color:var(--mut);max-width:36em;margin:16px auto 0}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px 32px;padding:32px 0;margin:0;list-style:none;color:var(--mut);font-size:.97rem}
+.facts li{padding-left:1.2em;position:relative}.facts li:before{content:"";position:absolute;left:0;top:.62em;width:7px;height:7px;border-radius:50%;background:var(--ac)}
+footer{border-top:1px solid var(--line);margin-top:40px;padding:28px 0 56px;color:var(--mut);font-size:.85rem}
+footer p{margin:0 0 10px}
+</style></head><body>
+<div class="wrap">
+<nav><b>Folio Player Plus</b><div><a href="support.html">Support</a><a href="privacy.html">Privacy</a></div></nav>
+
+<section class="hero">
+<img src="icon.png" alt="Folio Player Plus app icon" width="132" height="132">
+<h1>Your entire library, folded into one app.</h1>
+<p class="lead">Plex, Jellyfin, Emby, network shares and the files on your phone, brought together in one place, with the poster, story and cast of every title.</p>
+<a class="btn" href="https://apps.apple.com/app/id6828555639">View on the App Store</a>
+<div class="sources">
+<span>Plex</span><span>Jellyfin</span><span>Emby</span><span>SMB</span><span>WebDAV</span><span>SFTP</span><span>FTP</span><span>DLNA</span><span>iCloud Drive</span><span>Local files</span><span>Video links</span>
+</div>
+</section>
+
+<section class="grid">
+<div class="card"><h3>One library, every source</h3><p>Stop switching between apps. All your servers and folders show up together, searched all at once. The same film on three servers appears once.</p></div>
+<div class="card"><h3>Every title, beautifully described</h3><p>Posters, synopsis, cast, director, runtime, languages, resolution, IMDb, Rotten Tomatoes and TMDB ratings, and the trailer, one tap away.</p></div>
+<div class="card"><h3>Plays what you own</h3><p>MKV, MP4, M4V and MOV, up to 4K, with HDR10, HLG and Dolby Vision. DTS and TrueHD sound is converted on the fly.</p></div>
+<div class="card"><h3>Subtitles that just work</h3><p>SRT, ASS, WebVTT, PGS and VobSub from the file, or found online in your language.</p></div>
+<div class="card"><h3>Take it with you</h3><p>Download from your servers and watch with no signal. Continue watching where you stopped, on any device.</p></div>
+<div class="card"><h3>Follow what you watch</h3><p>Trakt keeps your history and progress in sync, with a journey of what you watched and a calendar of new episodes.</p></div>
+</section>
+
+<section class="band">
+<h2>Set up once. Everything comes back.</h2>
+<p>Your servers, keys, settings and the shows you follow sync through iCloud. Reinstall or change phone and your library is already there. Your videos stay where they are, and passwords stay in the Keychain.</p>
+</section>
+
+<ul class="facts">
+<li>AirPlay to a TV, with subtitles</li>
+<li>Audio and subtitle pickers, equaliser, speed, sleep timer</li>
+<li>Filter by genre, source or quality</li>
+<li>Fits the picture: original, expanded or fill screen</li>
+<li>Home with continue watching and latest additions</li>
+<li>Works on iPhone and iPad, including iPhone Duo</li>
+</ul>
+
+<footer>
 <p><a href="support.html">Support</a> · <a href="privacy.html">Privacy policy</a></p>
-</main></body></html>
+<p>The app plays your own videos and does not provide any content. This product uses the TMDB API but is not endorsed or certified by TMDB. This product uses Trakt but is not endorsed or certified by Trakt. Plex, Jellyfin and Emby are trademarks of their owners; Folio Player Plus is not affiliated with them.</p>
+<p>&copy; 2026 Charles Millet</p>
+</footer>
+</div>
+</body></html>
